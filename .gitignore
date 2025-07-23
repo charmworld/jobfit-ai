@@ -1,0 +1,22 @@
+.DS_Store
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+#app files
+/app/components/ResumeCard.tsx
+/app/components/ScoreCircle.tsx
+
+/app/routes/auth.tsx
+/app/routes/upload.tsx
+
+/app/lib/puter.ts
+
+/app/routes.ts
+
+/constants/
+/types/
+/public/
+
