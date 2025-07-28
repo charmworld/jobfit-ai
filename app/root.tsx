@@ -3,7 +3,6 @@ import {
   Links,
   Meta,
   Outlet,
-  Scripts,
   ScrollRestoration,
 } from "react-router";
 
@@ -25,13 +24,11 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
-
+export default function Root() {
   const { init } = usePuterStore();
 
   useEffect(() => {
-    init()
-
+    init();
   }, [init]);
 
   return (
@@ -43,16 +40,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Outlet />
         <ScrollRestoration />
         <script src="https://js.puter.com/v2/"></script>
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
